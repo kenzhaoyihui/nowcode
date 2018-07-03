@@ -1,0 +1,10 @@
+---
+
+- name: Fetch rhv42 installer rpm
+  get_url: url=http://bob.eng.lab.tlv.redhat.com/builds/latest_4.2/rhv-release-latest-4.2.noarch.rpm dest=/opt/rhv42.rpm force=yes
+
+- name: Install the downloaded rpm
+  command: rpm -ivh --force /opt/rhv42.rpm
+
+- name: copy rhel7.5 repo to RHEL7.5
+  copy: src="{{ role_path }}/templates/rhel75.j2" dest=/etc/yum.repos.d/rhel75.repo
