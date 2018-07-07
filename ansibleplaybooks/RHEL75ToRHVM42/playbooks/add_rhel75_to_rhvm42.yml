@@ -1,8 +1,0 @@
----
-
-- name: here
-  hosts: all
-  gather_facts: yes
-  
-  roles:
-    - ../roles/add_rhel75_to_rhvm42
